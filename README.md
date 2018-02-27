@@ -19,7 +19,7 @@ Aggregates very simple yet handy pieces of code in C for PIC uControllers.
    Description:
    When using a 16MHz cristal, the instruction cicle clock equals to 4MHz. When using a prescaler set to 1:16, the hardware timer0 will be updated at a 250KHz frequency. The code shows that timer0 just counts from 6~256 (256-6=250), so the timer0 interrup will be updated at a rate of 1KHz and period of 1ms. Setting up an external auxiliar variable to count each time 1ms has passed, and update the RB4_bit pin state, you end up with a precise hardware variable frequency output.  
    
-   Timing:     
+   Timing (using a 16MHz crystal)    
    - 16MHz/4 = 4MHz    
    - 4MHz/16 = 250KHz    
    - 250KHz/250 = 1KHz = 1ms^-1    
