@@ -13,7 +13,7 @@ Aggregates very simple yet handy pieces of code in C for PIC uControllers.
    
    INTCON: INTERRUPT CONTROL REGISTER (pg. 31 PIC16F887 datasheet)    
    OPTION_REG: OPTION REGISTER (pg. 30 PIC16F887 datasheet)    
-   TRISB - PORTB TRI-STATE REGISTER (pg. 48 PIC16F887 datasheet)
+   TRISB: PORTB TRI-STATE REGISTER (pg. 48 PIC16F887 datasheet)
    
    
    Description:
