@@ -19,7 +19,7 @@ void main() {
      // configuracao do OPTION_REG - OPTION REGISTER (pg. 30 PIC16F887 datasheet)
      NOT_RBPU_bit = 0x01;               // disables pull-ups on PORTb
      T0CS_bit     = 0x00;               // sets internal instruction clock cicle to timer0 -> (Fosc/4)
-     PSA_bit      = 0x00;               // prescaler é assinalado com o módulo do timer0
+     PSA_bit      = 0x00;               // prescaler Ã© assinalado com o mÃ³dulo do timer0
      PS2_bit      = 0x00;               // seta o prescaler em 1:16
      PS1_bit      = 0x01;               // seta o prescaler em 1:16
      PS0_bit      = 0x01;               // seta o prescaler em 1:16
@@ -31,9 +31,9 @@ void main() {
 
      // configuracao do PORTB
      TRISB = 0x00;                      // enables hole PORTB as an output
-     PORTB = 0x00;                      // define o estado dessa saída como nível lógico baixo (0)
+     PORTB = 0x00;                      // define o estado dessa saÃ­da como nÃ­vel lÃ³gico baixo (0)
 
-     while(1)                           // infinite loop
+     while(1){                          // infinite loop
               RB4_bit = value;          // refresh RB4 pin state
 
      }        // end while(1)
