@@ -3,7 +3,7 @@ Aggregates very simple yet handy pieces of code in C for PIC uControllers.
 
 ### PIC16F887 related codes: 
 - 01: timer0_int: describes how to setup timer0 and generate interruptions from its overflow 
-- 02:
+- 02: timer2_pwm: describes how to setup timer2 and generate a pwm
 - [PIC16F887 datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/41291D.pdf)
 
 
@@ -22,12 +22,35 @@ Aggregates very simple yet handy pieces of code in C for PIC uControllers.
    Timing (using a 16MHz crystal)    
    - 16MHz -> high speed crystal oscillator
    - 16MHz/4 = 4MHz -> internal instructions cicle clock
-   - 4MHz/16 = 250KHz -> rate of increment on t0
+   - 4MHz/16 = 250KHz -> after prescaler, rate of increment on t0
    - 250KHz/250 = 1KHz = 1ms^-1 -> final overflow interrupt frequency    
    
+   
+#### 01: timer2_pwm
+   Describes how to setup the timer2 to generate a PWM signal and change its duty cicle.
+   
+   T2CON: TIMER 2 CONTROL REGISTER (pg. 84 PIC16F887 datasheet)    
+   CCP1CON: ENHANCED CCP1 CONTROL REGISTER (pg. 126 PIC16F887 datasheet)    
+   PR2 - TIMER2 PERIOD REGISTER (pg.83 PIC16F887 datasheet)    
+   CCPR1L - CAPTURE/COMPARE/PWM REGISTER 1 LOW BYTE    
+   TRISC: PORTC TRI-STATE REGISTER (pg.53 PIC16F887 datasheet)    
+   
+   Description:    
+   The clock input to the timer module is the system instruction clock (Fosc/4). This clock is fed into the timer2 prescaler (1:1, 1:4, 1:16) and the output is used to increment the TMR2 register. The value os TMR2 and PR2 are constantly compared to determine when they match. TMR2 will increment from 0x00 until it matches the value on PR2 and when it occours TMR2 will reset back to 0x00. The register's setup are better explained in the code and in the datasheet, but It is important to emphasize that:    
+   PR2 -> determines when the overflow will occur.    
+   CCPR1L -> determines the duty cicle of the PWM signal.    
+  
+   Timing (using a 16MHz crystal)    
+   - 16MHz -> high speed crystal oscillator
+   - 16MHz/4 = 4MHz -> internal instructions cicle clock
+   - 4MHz/256  = 15.625KHz -> final PWM output frequency
+      
    
    References:     
    https://www.mikroe.com/ebooks/pic-microcontrollers-programming-in-c/timer-tmr0    
    https://www.youtube.com/watch?v=K81eMwKZYYw&list=PLZ8dBTV2_5HQ-LrS9r1dP30h8n9sh04gh&index=23    
    http://ww1.microchip.com/downloads/en/DeviceDoc/51702A.pdf    
+   https://www.youtube.com/watch?v=TtYJtwj8ry8&list=PLZ8dBTV2_5HQ-LrS9r1dP30h8n9sh04gh&index=30
       
+ 
+ 
