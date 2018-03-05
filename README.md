@@ -8,8 +8,7 @@ Aggregates very simple yet handy pieces of code in C for PIC uControllers.
 - [PIC16F887 datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/41291D.pdf)    
 
 #### 01: input_output    
-   Describes how to setup input and output pins on PORTB and make them interact. TRISB and PORTB register are setup in such a way that if the RB7 is set to logic high, PORTB as a whole binary number will be decremented, otherwise, will be incremented.
-   
+   Describes how to setup input and output pins on PORTB and make them interact. TRISB and PORTB register are setup in such a way that if the RB7 is set to logic high, PORTB as a whole binary number will be decremented, otherwise, will be incremented. Important to notice the implementation of the portb_mask register, to avoid 'read-modify-write' problems on simulation. It is still disputable if I would bring problems in an actual circuit.
    
 #### 02: timer0_int
    Describes how to setup the timer0 and generate interruptions from its overflow. Major part of code is setting up the hardware configuration registers.
