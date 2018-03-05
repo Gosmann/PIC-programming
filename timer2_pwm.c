@@ -1,4 +1,5 @@
-// description:
+// description: a program that sets registers on the PIC16F887 so that is generate
+//              a PWM signal on its P1A/RC4 pin with variable duty cicle.
 
 unsigned short int counter  = 0;
 
