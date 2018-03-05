@@ -1,8 +1,14 @@
+// description: Describes how to setup the timer0 and generate interruptions from its overflow. 
+//              Major part of code is setting up the hardware configuration registers.
+//
+//              source: https://github.com/Gosmann/PIC-programming/blob/master/timer0_int.c
+
+
 int counter = 0x00;     // starts in zero (0) auxiliar variable to count number of interruptions
 int treshold = 1;       // number of ms (miliseconds) to treshold -> treshold = period*2
 int value;              // auxiliar variable to change RB4_bit state
 
-    // code for timer0 overflow interruption
+// code for timer0 overflow interruption
 void interrupt(){
      counter++;                     // increments timer count
      TMR0 = 0x06;                   // starts counter register in "6"
@@ -11,10 +17,11 @@ void interrupt(){
      if(counter >= treshold){       // if counter variable is greater/equal to treshold value
          counter = 0;               // sets the counter variable back to zero
          value = ~value;            // inverts the state of variable "value"
+         RB4_bit = value;           // refresh RB4 pin state
      }
 }    // end interrupt
 
-     // main code
+// main code
 void main() {
      // configuracao do OPTION_REG - OPTION REGISTER (pg. 30 PIC16F887 datasheet)
      NOT_RBPU_bit = 0x01;               // disables pull-ups on PORTb
@@ -34,8 +41,7 @@ void main() {
      PORTB = 0x00;                      // define o estado dessa saída como nível lógico baixo (0)
 
      while(1){                          // infinite loop
-              RB4_bit = value;          // refresh RB4 pin state
 
-     }        // end while(1)
-     
-}    // end main()
+     } // end while()
+
+} // end main()
