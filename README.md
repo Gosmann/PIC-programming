@@ -2,12 +2,16 @@
 Aggregates very simple yet handy pieces of code in C for PIC uControllers. 
 
 ### PIC16F887 related codes: 
-- 01: timer0_int: describes how to setup timer0 and generate interruptions from its overflow 
-- 02: timer2_pwm: describes how to setup timer2 and generate a pwm
-- [PIC16F887 datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/41291D.pdf)
+- 01: input_output: describes how to setup input and output pins on PORTB and make them interact    
+- 02: timer0_int: describes how to setup timer0 and generate interruptions from its overflow     
+- 03: timer2_pwm: describes how to setup timer2 and generate a pwm    
+- [PIC16F887 datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/41291D.pdf)    
 
-
-#### 01: timer0_int
+#### 01: input_output    
+   Describes how to setup input and output pins on PORTB and make them interact. TRISB and PORTB register are setup in such a way that if the RB7 is set to logic high, PORTB as a whole binary number will be decremented, otherwise, will be incremented.
+   
+   
+#### 02: timer0_int
    Describes how to setup the timer0 and generate interruptions from its overflow. Major part of code is setting up the hardware configuration registers.
    
    
@@ -26,7 +30,7 @@ Aggregates very simple yet handy pieces of code in C for PIC uControllers.
    - 250KHz/250 = 1KHz = 1ms^-1 -> final overflow interrupt frequency    
    
    
-#### 01: timer2_pwm
+#### 03: timer2_pwm
    Describes how to setup the timer2 to generate a PWM signal and change its duty cicle.
    
    T2CON: TIMER 2 CONTROL REGISTER (pg. 84 PIC16F887 datasheet)    
