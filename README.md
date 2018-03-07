@@ -68,6 +68,10 @@ Aggregates very simple yet handy pieces of code in C for PIC uControllers.
    https://www.youtube.com/watch?v=K81eMwKZYYw&list=PLZ8dBTV2_5HQ-LrS9r1dP30h8n9sh04gh&index=23    
    http://ww1.microchip.com/downloads/en/DeviceDoc/51702A.pdf    
    https://www.youtube.com/watch?v=TtYJtwj8ry8&list=PLZ8dBTV2_5HQ-LrS9r1dP30h8n9sh04gh&index=30
+   https://electrosome.com/interrupt-pic-microcontroller/
+   https://forum.mikroe.com/viewtopic.php?f=88&t=28287&p=138861
+   https://www.youtube.com/watch?v=G68hsqPuU_Y 
+   http://www.microchip.com/forums/m413754.aspx
       
  
  
