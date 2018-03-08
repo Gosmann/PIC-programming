@@ -2,16 +2,26 @@
 Aggregates very simple yet handy pieces of code in C for PIC uControllers. 
 
 ### PIC16F887 related codes: 
-- 01: input_output: describes how to setup input and output pins on PORTB and make them interact    
-- 02: timer0_int: describes how to setup timer0 and generate interruptions from its overflow     
-- 03: timer2_pwm: describes how to setup timer2 and generate a pwm
-- 04: rb0_int: describes how to setup RB0/INT/AN12 to generate an interrupt from external rising or falling edge
+- 01: hello_world: describes how to setup a simple blink for whole PORTB register
+- 02: hello_world_1: describes how to setup a blink on timer0 interrupt for whole PORTB register
+- 03: input_output: describes how to setup input and output pins on PORTB and make them interact    
+- 04: timer0_int: describes how to setup timer0 and generate interruptions from its overflow     
+- 05: timer2_pwm: describes how to setup timer2 and generate a pwm
+- 06: rb0_int: describes how to setup RB0/INT/AN12 to generate an interrupt from external rising or falling edge
 - [PIC16F887 datasheet](http://ww1.microchip.com/downloads/en/DeviceDoc/41291D.pdf)    
 
-#### 01: input_output    
+#### 01: hello_world    
+   Describes how to setup a simple blink for whole PORTB register. It show a simple hardware register configuration to setup whole PORTB as a digital output and in LOW logic level. Then, in an infinite loop, PORTB is completely set as LOW, a delay happens and the processor is stopped for 200ms, PORTB register is set then to HIGH, another 200ms are waited and the cicle persists indefinitely.  
+
+
+#### 02: input_output_1       
+
+
+#### 03: input_output    
    Describes how to setup input and output pins on PORTB and make them interact. TRISB and PORTB register are setup in such a way that if the RB7 is set to logic high, PORTB as a whole binary number will be decremented, otherwise, will be incremented. Important to notice the implementation of the portb_mask register, to avoid 'read-modify-write' problems on simulation. It is still disputable if I would bring problems in an actual circuit.
-   
-#### 02: timer0_int
+
+
+#### 04: timer0_int     
    Describes how to setup the timer0 and generate interruptions from its overflow. Major part of code is setting up the hardware configuration registers.
    
    
@@ -30,7 +40,7 @@ Aggregates very simple yet handy pieces of code in C for PIC uControllers.
    - 250KHz/250 = 1KHz = 1ms^-1 -> final overflow interrupt frequency    
    
    
-#### 03: timer2_pwm
+#### 05: timer2_pwm
    Describes how to setup the timer2 to generate a PWM signal and change its duty cycle.
    
    T2CON: TIMER 2 CONTROL REGISTER (pg. 84 PIC16F887 datasheet)    
@@ -50,7 +60,7 @@ Aggregates very simple yet handy pieces of code in C for PIC uControllers.
    - 4MHz/256  = 15.625KHz -> final PWM output frequency
 
 
-#### 04: rb0_int
+#### 06: rb0_int
    Describes how to setup RB0/INT/AN12 to generate an interrupt from external rising or falling edge. It can be very useful when dealing with any kind of external digital signal processing.   
    
    ANSELH - ANALOG SELECT HIGH REGISTER (pg. 48 PIC16F887 datasheet)
