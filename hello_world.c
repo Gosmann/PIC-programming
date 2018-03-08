@@ -1,6 +1,6 @@
-// description:
+// description: describes how to setup a simple blink for entire PORTB register
 //
-// source:
+// source code available on: https://github.com/Gosmann/PIC-programming/blob/master/hello_world.c
 
 void main(){
      // config PORTB and TRISB - PORTB AND TRISB REGISTERS (pg. 47 PIC16F887 datasheet)
