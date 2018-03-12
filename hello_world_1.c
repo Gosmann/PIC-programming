@@ -1,7 +1,7 @@
 // description: Describes how to setup the timer0 and generate interruptions from its overflow.
 //              Major part of code is setting up the hardware configuration registers.
 //
-//              source code:
+//              source code: https://github.com/Gosmann/PIC-programming/blob/master/hello_world_1.c
 
 int counter = 0x00;                 // starts in zero (0) auxiliar variable to count number of interruptions
 int treshold = 30;                  //
