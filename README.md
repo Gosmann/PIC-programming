@@ -14,7 +14,8 @@ Aggregates very simple yet handy pieces of code in C for PIC uControllers.
    Describes how to setup a simple blink for whole PORTB register. It show a simple hardware register configuration to setup whole PORTB as a digital output and in LOW logic level. Then, in an infinite loop, PORTB is completely set as LOW, a delay happens and the processor is stopped for 200ms, PORTB register is set then to HIGH, another 200ms are waited and the cicle persists indefinitely.  
 
 
-#### 02: input_output_1       
+#### 02: hello_world_1     
+   Describes how to setup a simple blink for whole PORTB register. However, instead of using simple delay, seting up timer0 interrupt to be aware of timing process. This is a much better solution, because instead of doing only one thing at a time, many other tasks can be processed while not on the interrupt.  
 
 
 #### 03: input_output    
